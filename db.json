@@ -1,0 +1,312 @@
+{
+  "employees" : [
+    {
+      "claimId": 1,
+      "priority": "p1",
+      "patientName": "John",
+      "dob": "15/5/1990",
+      "claimStatus": "pending",
+      "phoneNo": "9876543210",
+      "country": "Slovenia",
+      "year":"2023",
+      "children": [
+        {
+          "claimId": 1,
+          "priority": "p2",
+          "patientName": "david",
+          "dob": "16/10/1999",
+          "claimStatus": "paid",
+          "phoneNo": "9195598241",
+          "country": "Mexico",
+          "year":"2022"
+        }
+      ]
+    },
+    {
+      "claimId": 2,
+      "priority": "p1",
+      "patientName": "james",
+      "dob": "14/5/1991",
+      "claimStatus": "pending",
+      "phoneNo": "9576543210",
+      "country": "Paraguay",
+      "year":"2021"
+    },
+    {
+      "claimId": 3,
+      "priority": "p1",
+      "patientName": "Leena",
+      "dob": "18/5/1980",
+      "claimStatus": "pending",
+      "phoneNo": "5646543210",
+      "country": "Mexico",
+      "year":"2020",
+      "children": [
+        {
+          "claimId": 3,
+          "priority": "p2",
+          "patientName": "Simmona",
+          "dob": "17/5/1949",
+          "claimStatus": "paid",
+          "phoneNo": "1276542312",
+          "country": "Slovenia",
+          "year":"2019"
+        }
+      ]
+    },
+    {
+      "claimId": 4,
+      "priority": "p1",
+      "patientName": "Mitsue",
+      "dob": "15/5/1990",
+      "claimStatus": "pending",
+      "phoneNo": "9874543210",
+      "country": "Mexico",
+      "year":"2018",
+      "children": [
+        {
+          "claimId": 4,
+          "priority": "p2",
+          "patientName": "Leota",
+          "dob": "11/11/1999",
+          "claimStatus": "paid",
+          "phoneNo": "3445342312",
+          "country": "Slovenia",
+          "year":"2017"
+        }
+      ]
+    },
+    {
+      "claimId": 5,
+      "priority": "p1",
+      "patientName": "Kiley",
+      "dob": "15/7/1998",
+      "claimStatus": "pending",
+      "phoneNo": "6756543210",
+      "country": "Mexico",
+      "year":"2016",
+      "children": [
+        {
+          "claimId": 5,
+          "priority": "p2",
+          "patientName": "Donette",
+          "dob": "12/10/1399",
+          "claimStatus": "paid",
+          "phoneNo": "8754542312",
+          "country": "Serbia",
+          "year":"2015"
+        }
+      ]
+    },
+    {
+      "claimId": 6,
+      "priority": "p1",
+      "patientName": "Foller",
+      "dob": "9/5/1965",
+      "claimStatus": "pending",
+      "phoneNo": "2376543210",
+      "country": "Mexico",
+      "year":"2014",
+      "children": [
+        {
+          "claimId": 6,
+          "priority": "p2",
+          "patientName": "Butt",
+          "dob": "16/10/1999",
+          "claimStatus": "paid",
+          "phoneNo": "432654231",
+          "country": "Paraguay",
+          "year":"2013"
+        }
+      ]
+    },
+    {
+      "claimId": 7,
+      "priority": "p1",
+      "patientName": "Sage",
+      "dob": "12/6/1965",
+      "claimStatus": "pending",
+      "phoneNo": "7656543210",
+      "country": "Mexico",
+      "year":"2012",
+      "children": [
+        {
+          "claimId": 7,
+          "priority": "p2",
+          "patientName": "Kris",
+          "dob": "17/10/1129",
+          "claimStatus": "paid",
+          "phoneNo": "5676542312",
+          "country": "South Africa",
+          "year":"2011"
+        }
+      ]
+    },
+    {
+      "claimId": 8,
+      "priority": "p1",
+      "patientName": "Minna",
+      "dob": "11/5/1670",
+      "claimStatus": "pending",
+      "phoneNo": "321543210",
+      "country": "South Africa",
+      "year":"2004",
+      "children": [
+        {
+          "claimId": 8,
+          "priority": "p2",
+          "patientName": "Abel",
+          "dob": "12/12/1939",
+          "claimStatus": "paid",
+          "phoneNo": "9876542312",
+          "country": "Paraguay",
+          "year":"2003"
+        },
+        {
+          "claimId": 8,
+          "priority": "p3",
+          "patientName": "ZAbel",
+          "dob": "18/10/1499",
+          "claimStatus": "paid",
+          "phoneNo": "7976542312",
+          "country": "Serbia",
+          "year":"2002"
+        },
+        {
+          "claimId": 8,
+          "priority": "p4",
+          "patientName": "Minna",
+          "dob": "10/10/1989",
+          "claimStatus": "paid",
+          "phoneNo": "8721542312",
+          "country": "Mexico",
+          "year":"2001"
+        }
+      ]
+    },
+    {
+      "claimId": 9,
+      "priority": "p1",
+      "patientName": "Cammy",
+      "dob": "12/4/1440",
+      "claimStatus": "pending",
+      "phoneNo": "1265643210",
+      "country": "Panama",
+      "year":"2010"
+    },
+    {
+      "claimId": 10,
+      "priority": "p1",
+      "patientName": "Amigon",
+      "dob": "25/5/1390",
+      "claimStatus": "pending",
+      "phoneNo": "2365143210",
+      "country": "Slovenia",
+      "year":"2009"
+    },
+    {
+      "claimId": 11,
+      "priority": "p1",
+      "patientName": "Cammy",
+      "dob": "12/4/1440",
+      "claimStatus": "pending",
+      "phoneNo": "1265643210",
+      "country": "Egypt",
+      "year":"2008",
+      "children": [
+        {
+          "claimId": 11,
+          "priority": "p2",
+          "patientName": "Mattie",
+          "dob": "15/11/1279",
+          "claimStatus": "paid",
+          "phoneNo": "6734542312",
+          "country": "Egypt",
+          "year":"2007"
+        }
+      ]
+    },
+    {
+      "claimId": 12,
+      "priority": "p1",
+      "patientName": "Minna",
+      "dob": "11/5/1670",
+      "claimStatus": "pending",
+      "phoneNo": "321543210",
+      "country": "Algeria",
+      "year":"2006",
+      "children": [
+        {
+          "claimId": 12,
+          "priority": "p2",
+          "patientName": "Abel",
+          "dob": "19/12/1999",
+          "claimStatus": "paid",
+          "phoneNo": "9876542312",
+          "country": "Algeria",
+          "year":"2005"
+        }
+      ]
+    }
+  ],
+  "cols": [
+    { 
+      "field": "claimId", 
+      "header": "Claim Id",
+      "editable" : true,
+      "icon": "true"
+    },
+    { 
+      "field": "priority", 
+      "header": "Priority",
+      "type": "dropdown",
+      "editable" :false
+    },
+    { 
+      "field": "patientName", 
+      "header": "Patient Name",
+      "type": "text",
+      "editable" :false
+    },
+    { 
+      "field": "dob", 
+      "header": "DOB",
+      "type": "date",
+      "editable" :false
+    },
+    { 
+      "field": "claimStatus", 
+      "header": "Claim Status",
+      "type": "dropdown",
+      "editable" :false
+    },
+    { 
+      "field": "phoneNo", 
+      "header": "Phone No",
+      "type": "number",
+      "editable" :false
+    },
+    { 
+      "field": "country", 
+      "header": "Country",
+      "type": "text",
+      "editable" :false
+    },
+    { 
+      "field": "year", 
+      "header": "Year",
+      "type": "number",
+      "editable" :false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

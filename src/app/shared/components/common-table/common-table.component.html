@@ -1,0 +1,111 @@
+<p-table class="commonTable" [columns]="cols" [value]="employees" [(selection)]="selectedRows"
+    [tableStyle]="{ 'min-width': '50rem' }" [scrollable]="true" scrollHeight="calc(100vh - 100px)" styleClass="mt-3"
+    dataKey="claimId" [metaKeySelection]="true" [reorderableColumns]="true">
+    <ng-template pTemplate="caption">
+        <div class="flex minHeight">
+            <div class="card flex justify-content-center ">
+                <!-- Table data download all types of file -->
+                <p-menu #menu [model]="items" [popup]="true"></p-menu>
+                <button pButton type="button" *ngIf="selectedChildrenRow.length > 0 || selectedRows.length > 0"
+                    ngDefaultControl [(ngModel)]="selectedRows" (click)="menu.toggle($event)" icon="pi pi-bars"
+                    label="Export"></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <!-- Dynamic Labels -->
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th>
+                <p-tableHeaderCheckbox (click)="selectAllRows()"></p-tableHeaderCheckbox>
+            </th>
+            <th></th>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field" alignfrozen="left" pFrozenColumn
+                [frozen]="col.isfrozencolumn" style="min-width: 50px" pReorderableColumn>
+                {{ col.header }}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+                <p-columnFilter type="text" field="title" display="menu" class="ml-auto" [field]="col.field"
+                    [showAddButton]="false">
+                </p-columnFilter>
+            </th>
+        </tr>
+    </ng-template>
+
+    <!-- Dynamic Table Data -->
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded" let-editing="editing"
+        let-rowIndex="rowIndex">
+        <tr [pSelectableRow]="rowData" [pReorderableRow]="rowIndex" [pSelectableRowIndex]="rowIndex">
+            <td>
+                <p-tableCheckbox [value]="rowData" ngDefaultControl
+                    (click)="selectParentRow(rowData)"></p-tableCheckbox>
+            </td>
+
+            <!-- Row Expandable Icon -->
+            <td>
+                <button type="button" *ngIf="rowData.children && rowData.children.length > 0" pButton pRipple
+                    [pRowToggler]="rowData" class="p-button-text p-button-rounded p-button-plain"
+                    [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+            </td>
+
+            <!-- Cell Edit in Dynamic Data -->
+            <td [pEditableColumn]="rowData" *ngFor="let col of columns" style="width: 300px">
+                <p-cellEditor *ngIf="!col.editable; else editableTemplate">
+                    <ng-template pTemplate="input">
+                        <input pInputText *ngIf="col.type=='text' || col.type=='number'" [type]="col.type"
+                            (keypress)="$event.key == 'e' ? $event.preventDefault():''" [(ngModel)]="rowData[col.field]"
+                            style="width:100%" />
+                        <p-dropdown *ngIf="col.type == 'dropdown'" [(ngModel)]="rowData[col.field]"
+                            [options]="options[col.field]" optionLabel="label" optionValue="value"></p-dropdown>
+                        <p-calendar *ngIf="col.type == 'date'" appendTo="body" dateFormat="dd/mm/yy"
+                            [(ngModel)]="rowData[col.field]">
+                        </p-calendar>
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{ col.type === 'date' ? dateFormat(rowData[col.field]) : rowData[col.field] }}
+                    </ng-template>
+                </p-cellEditor>
+                <ng-template #editableTemplate>
+                    {{ rowData[col.field] }}
+                </ng-template>
+            </td>
+        </tr>
+    </ng-template>
+
+    <!-- No Record Found... -->
+    <ng-template pTemplate="emptymessage">
+        <div class="nodataFound" style="color: red;">No Record Found... </div>
+    </ng-template>
+
+    <!-- Row Expandable -->
+    <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns" let-rowIndex="rowIndex"
+        let-expanded="expanded">
+        <ng-container *ngFor="let item of rowData.children">
+            <tr [pSelectableRow]="item" class="childRow" [pSelectableRowIndex]="rowIndex">
+                <td>
+                    <p-checkbox [value]="item" (click)="selectedChildren(selectedChildrenRow,rowData)"
+                        name="parentCheckbox" [(ngModel)]="selectedChildrenRow"></p-checkbox>
+                </td>
+                <td></td>
+                <td [pEditableColumn]="rowData" *ngFor="let col of columns" style="width: 300px">
+                    <p-cellEditor *ngIf="!col.editable; else editableTemplate">
+                        <ng-template pTemplate="input">
+                            <input pInputText *ngIf="col.type =='text' || col.type =='number'" [type]="col.type"
+                                (keypress)="$event.key == 'e' ? $event.preventDefault():''"
+                                [(ngModel)]="item[col.field]" style="width:100%" />
+                            <p-dropdown *ngIf="col.type == 'dropdown'" [(ngModel)]="item[col.field]"
+                                [options]="options[col.field]"></p-dropdown>
+                            <p-calendar *ngIf="col.type == 'date'" appendTo="body" [(ngModel)]="item[col.field]"
+                                dateFormat="dd/mm/yy"></p-calendar>
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                        {{ col.type === 'date' ? dateFormat(item[col.field]) : item[col.field] }}
+                    </ng-template>
+                    </p-cellEditor>
+                    <ng-template #editableTemplate>
+                        {{ item[col.field] }}
+                    </ng-template>
+                </td>
+            </tr>
+        </ng-container>
+    </ng-template>
+</p-table>

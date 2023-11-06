@@ -1,0 +1,25 @@
+.p-datepicker{
+    .p-datepicker-header{
+        padding: 0;
+        button {
+            font-size: 13px;
+        }
+    }
+    .p-datepicker-calendar-container{
+        table {
+            tr {
+                th {
+                    font-size: 13px;
+                }
+                td {
+                    padding: 0.2rem;
+                    span {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

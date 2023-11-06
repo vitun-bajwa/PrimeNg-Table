@@ -1,0 +1,118 @@
+@import '../scss/color-variable';
+
+.commonTable{
+    .p-datatable-wrapper{
+        min-height: calc(100vh - 220px);
+    }
+}
+.p-datatable {
+    .p-datatable-thead{
+        z-index: 999 !important;
+        tr {
+            th{
+                min-width: 70px;
+                white-space: nowrap;
+                &:first-child {
+                    position: sticky;
+                    left: 0;
+                    z-index: 99;
+                }
+                &:nth-child(2) {
+                    position: sticky;
+                    left: 70px;
+                    z-index: 99;
+                }
+            }
+        }
+    }
+    .p-datatable-tbody {
+        tr {
+            &:focus{
+                outline: none !important;
+            }            
+            td {
+                min-width: 70px;
+                button{
+                    background-color: $primery-color !important;
+                    &:hover{
+                        background-color: $gray-color !important;
+                    }
+                    &.p-button-icon-only{
+                        &:focus {
+                            box-shadow: none !important;
+                        }
+                    }
+                }
+                &:first-child {
+                    position: sticky;
+                    left: 0;
+                    z-index: 99;
+                    background-color: $primery-color;
+                }
+                &:nth-child(2) {
+                    position: sticky;
+                    left: 70px;
+                    z-index: 99;
+                    background-color: $primery-color;
+                }                
+            }
+            &.p-highlight{
+                td {
+                    &:first-child, &:nth-child(2) {
+                        background-color: $light-blue;
+                    }
+                }
+            }
+            &.childRow {
+                td {
+                    &:empty {
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            left: 40px;
+                            top: -28px;
+                            width: 1px;
+                            height: 55px;
+                            background-color: $gray-color;
+                        }
+                        &:after{
+                            position: absolute;
+                            content: "";
+                            left: 40px;
+                            top: 27px;
+                            width: 39px;
+                            height: 1px;
+                            background-color: $gray-color;
+                        }
+                        ~ {
+                            td {
+                                font-style: italic;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// nodata 
+
+.nodataFound{
+    display: block;
+    width: 96vw;
+    position: absolute;
+    left: 2vw;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// indicator
+
+.pi-arrow-down, .pi-arrow-up {
+    &.p-datatable-reorder-indicator-up, &.p-datatable-reorder-indicator-down {
+        display: none !important;
+    }
+}

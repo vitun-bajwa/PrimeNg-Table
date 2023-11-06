@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../src/assets/scss/table';
+@import '../src/assets/scss/calendar';
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+.base-table { 
+    p-dropdown {
+      .ui-dropdown {
+        min-width:0;
+      }
+    }
+}
