@@ -1,0 +1,30 @@
+<h2>Angular Reactive Forms Nested Group</h2>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+  <div formGroupName="name">
+    <input formControlName="first" placeholder="First name" /><br />
+    <input formControlName="last" placeholder="Last name" /><br />
+    <p *ngIf="f['name'].touched && f['name'].invalid" [style.color]="'red'">
+      Name is invalid.
+    </p>
+  </div>
+
+  <input formControlName="email" placeholder="Email" /><br />
+
+  <ng-container formArrayName="phones">
+    <ng-container *ngFor="let item of fa; let i = index">
+      <ng-container *ngIf="i === 0; else fControl">
+        <ng-container formGroupName="{{i}}">
+          <input type="text" formControlName="home">
+          <input type="text" formControlName="office">
+        </ng-container>
+      </ng-container>
+      <ng-template #fControl>
+        <input type="text" formControlName="{{i}}">
+      </ng-template>
+    </ng-container>
+  </ng-container>
+
+  <button type="submit">Submit</button>
+  <button (click)="setPreset()">Set preset</button>
+</form>

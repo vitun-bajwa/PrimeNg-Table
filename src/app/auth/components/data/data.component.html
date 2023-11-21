@@ -1,0 +1,23 @@
+<div>
+    <h2>Product List</h2>
+    <div>
+      <label for="minPrice">Min Price: </label>
+      <input id="minPrice" type="number" [(ngModel)]="minPrice" (change)="filterAndSortProducts()" />
+    </div>
+    <div>
+      <label for="maxPrice">Max Price: </label>
+      <input id="maxPrice" type="number" [(ngModel)]="maxPrice" (change)="filterAndSortProducts()" />
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let product of filteredProducts">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency }}</td>
+      </tr>
+    </table>
+  </div>

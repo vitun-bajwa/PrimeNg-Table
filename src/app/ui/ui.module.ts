@@ -15,7 +15,6 @@ import { ToastModule } from 'primeng/toast';
 import { CalendarModule } from 'primeng/calendar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CsvService } from '../core/csvfile/csv.service';
-
 const material = [
   ButtonModule,
   TableModule,

@@ -22,7 +22,8 @@ export class CommonTableComponent implements OnInit {
   calendarDate: any
   selectedParentRow: any = [];
   selectedChildrenRow: any = [];
-
+  selectedRow:any;
+  childrenCount:any;
   options: any = {
     priority: [
       { label: 'p1', value: 'p1' },
@@ -37,6 +38,21 @@ export class CommonTableComponent implements OnInit {
 
   constructor(private tableService: TableService, private csvService: CsvService, private datePipe: DatePipe) { }
 
+  calculateTotal(selectedRows: any) {
+    debugger
+    let total = 0;
+    for (const row of selectedRows) {
+      total += row.rowData + row.rowData?.children;
+    }
+    return total;
+  }
+
+
+  // onRowSelect(event:any) {
+  //   debugger
+  //   this.selectedRows = event;
+  //   this.childrenCount = this.selectedRows.rowData ? this.selectedRows.rowData.children.length : 0;
+  // }
   ngOnInit() {
     setTimeout(() => {
       this.getEmployes();

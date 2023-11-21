@@ -1,3 +1,13 @@
+<div *ngIf="selectedRows.length > 0">
+
+    {{calculateTotal(selectedRows)}}
+</div>
+
+<!-- <div class="count-info">
+    Selected Parent: {{ onRowSelect(selectedRows?.name) }}
+    <br>
+    Children Count: {{ onRowSelect(childrenCount) }}
+  </div> -->
 <p-table class="commonTable" [columns]="cols" [value]="employees" [(selection)]="selectedRows"
     [tableStyle]="{ 'min-width': '50rem' }" [scrollable]="true" scrollHeight="calc(100vh - 100px)" styleClass="mt-3"
     dataKey="claimId" [metaKeySelection]="true" [reorderableColumns]="true">
@@ -12,7 +22,6 @@
             </div>
         </div>
     </ng-template>
-
     <!-- Dynamic Labels -->
     <ng-template pTemplate="header" let-columns>
         <tr>
@@ -98,8 +107,11 @@
                                 dateFormat="dd/mm/yy"></p-calendar>
                         </ng-template>
                         <ng-template pTemplate="output">
-                        {{ col.type === 'date' ? dateFormat(item[col.field]) : item[col.field] }}
-                    </ng-template>
+                            {{ col.type === 'date' ? dateFormat(item[col.field]) : item[col.field] }}
+                            <p *ngIf="col.editable === true" style="color:red">
+                                don't editable columns
+                            </p>
+                        </ng-template>
                     </p-cellEditor>
                     <ng-template #editableTemplate>
                         {{ item[col.field] }}
